@@ -90,3 +90,37 @@ parameters[1] will have a value of app
 both pineapple and apple will be added to found
 
 # Fixing code
+
+## First fix
+Test:
+
+![Image](5.png)
+
+Symptom:
+![Image](6.png)
+
+Bug(already fixed):
+
+![Image](7.png)
+
+Here, the original method has 
+```
+sum += nums[i+1]
+```
+This will actually give us the sum of odd indices. i here will be 0,2,4... And they are already even idices, +1 will make them odd. A index out of bound exception might also be caused here.
+
+
+## Second fix
+
+Test:
+
+![Image](8.png)
+
+Symptom:
+![Image](9.png)
+
+Bug(already fixed):
+
+![Image](10.png)
+
+The original code copied the elements in the new created array to the old array. So the new array will have its original value of 0. It also returned the arr instead of newArray. After changing the position of newArray and arr in the for loop and changing the return array, the method will function normally.
